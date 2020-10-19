@@ -46,31 +46,49 @@ public class AbstractFeatureTask extends AbstractServerTask {
 
         @Override
         public void debug(String msg) {
+            if (logger == null) {
+                throw new PluginExecutionException("The logger is null in InstallFeatureTaskUtil.")
+            }
             logger.debug(msg)
         }
 
         @Override
         public void debug(String msg, Throwable e) {
+            if (logger == null) {
+                throw new PluginExecutionException("The logger is null in InstallFeatureTaskUtil.")
+            }
             logger.debug(msg, e)
         }
 
         @Override
         public void debug(Throwable e) {
+            if (logger == null) {
+                throw new PluginExecutionException("The logger is null in InstallFeatureTaskUtil.")
+            }
             logger.debug(e)
         }
 
         @Override
         public void warn(String msg) {
+            if (logger == null) {
+                throw new PluginExecutionException("The logger is null in InstallFeatureTaskUtil.")
+            }
             logger.warn(msg)
         }
 
         @Override
         public void info(String msg) {
+            if (logger == null) {
+                throw new PluginExecutionException("The logger is null in InstallFeatureTaskUtil.")
+            }
             logger.info(msg)
         }
 
         @Override
         public boolean isDebugEnabled() {
+            if (logger == null) {
+                throw new PluginExecutionException("The logger is null in InstallFeatureTaskUtil.")
+            }
             return logger.isEnabled(LogLevel.DEBUG)
         }
 
